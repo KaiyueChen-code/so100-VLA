@@ -35,7 +35,16 @@ so100-lerobot-guide/
   LICENSE
 ```
 
-## Require
+## Requirements
+- OS: Ubuntu 22.04.5 LTS (Jammy)
+- Kernel: 6.8.0-94-generic
+- CPU Arch: x86_64
+- GPU: NVIDIA GeForce RTX 4060 (8GB)
+- NVIDIA Driver: 575.64.03
+- CUDA (driver/runtime): 12.9 (`nvidia-smi`)
+- Cameras (UVC):
+  - Top: DSJ-2062-309 — **1280×720 @ 30fps (MJPG)**
+  - Wrist: DSJ-2062-309 — **1280×720 @ 30fps (MJPG)**
 
 ## Quick Start
 If you just want to run inference / reproduce training quickly, follow this.
