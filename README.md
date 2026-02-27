@@ -33,3 +33,7 @@ so100-lerobot-guide/
   examples/                # minimal examples (optional)
   assets/                  # figures / gifs
   LICENSE
+
+---
+
+## Quick Start
