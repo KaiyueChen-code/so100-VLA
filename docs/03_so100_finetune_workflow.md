@@ -68,7 +68,8 @@ lerobot-teleoperate \
 ## 3) Record dataset (teleop + camera)
 ### 3.1 Recording command template
 ⚠️Important: default record fps is 30fps. We strongly recommend NOT changing it, to keep the dataset consistent.
-❗
+
+❗You should adapt num_episodes,episode_time_s,reset_times depending on your situation.
 
 ```bash
 lerobot-record \
