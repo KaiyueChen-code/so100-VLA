@@ -66,4 +66,23 @@ lerobot-teleoperate \
 ```
 
 ## 3) Record dataset (teleop + camera)
-Important: default record fps is 30fps. We strongly recommend NOT changing it, to keep the dataset consistent.
+### 3.1 Recording command template
+⚠️Important: default record fps is 30fps. We strongly recommend NOT changing it, to keep the dataset consistent.
+```bash
+lerobot-record \
+  --robot.disable_torque_on_disconnect=true \
+  --robot.type=so100_follower \
+  --robot.port=/dev/ttyACM0 \
+  --robot.id=<FOLLOWER_ID> \
+  --robot.cameras="{'handeye': {'type':'opencv', 'index_or_path':4, 'width':640, 'height':360, 'fps':30}, 'top': {'type':'opencv', 'index_or_path':0, 'width':640, 'height':360, 'fps':30}}" \
+  --teleop.type=so100_leader \
+  --teleop.port=/dev/ttyACM1 \
+  --teleop.id=<LEADER_ID> \
+  --display_data=false \
+  --dataset.repo_id=<HF_DATASET_REPO_ID> \
+  --dataset.num_episodes=50 \
+  --dataset.episode_time_s=25 \
+  --dataset.reset_time_s=10 \
+  --dataset.single_task="<TASK_PROMPT>" \
+  --dataset.push_to_hub=false
+```
