@@ -32,3 +32,23 @@ ls -l /dev/video*
 v4l2-ctl --list-devices
 ```
 Tip: UVC cameras usually appear in pairs (0/1, 2/3, 4/5). Use the even index for the actual video stream.
+
+## 1) USB permissions (robot serial)
+```bash
+sudo chmod 666 /dev/ttyACM0
+sudo chmod 666 /dev/ttyACM1
+```
+
+## 2) Teleoperation (leader → follower)
+With camera preview (useful for debugging)
+```bash
+lerobot-teleoperate \
+  --robot.type=so100_follower \
+  --robot.port=/dev/ttyACM1 \
+  --robot.id=<FOLLOWER_ID> \
+  --robot.cameras="{'handeye': {'type':'opencv', 'index_or_path':4, 'width':640, 'height':360, 'fps':30}, 'top': {'type':'opencv', 'index_or_path':0, 'width':640, 'height':360, 'fps':30}}" \
+  --teleop.type=so100_leader \
+  --teleop.port=/dev/ttyACM0 \
+  --teleop.id=<LEADER_ID> \
+  --display_data=true
+```
