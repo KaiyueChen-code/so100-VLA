@@ -100,12 +100,78 @@ add:
 
 For a grasping task, it can help to mix:
 
-Success trajectories: search → align → grasp → place
+- Success trajectories: search → align → grasp → place
 
-Recovery trajectories: start near failure states (misalignment / near-contact) and demonstrate correction
+- Recovery trajectories: start near failure states (misalignment / near-contact) and demonstrate correction
 
 Example:
 
 60× success episodes
 
 30× recovery episodes
+
+## 4）Dataset visualization
+### 4.1 Visualize episodes
+```bash
+lerobot-dataset-viz \
+  --repo-id <HF_DATASET_REPO_ID> \
+  --episode-index 0 \
+  --display-compressed-images 0
+```
+### 4.2 Where is the local dataset stored?
+LeRobot typically stores recorded datasets under:
+
+- ~/.cache/huggingface/lerobot/<username>/<dataset_name>/
+
+You can locate it by:
+```bash
+ls -lah ~/.cache/huggingface/lerobot
+find ~/.cache/huggingface/lerobot -maxdepth 3 -type d | head
+```
+
+## 5) Upload dataset to HuggingFace (optional)
+### 5.1 Login
+```bash
+huggingface-cli login
+```
+
+### 5.2 Upload local dataset folder
+```bash
+huggingface-cli upload <HF_USERNAME>/<DATASET_NAME> \
+  ~/.cache/huggingface/lerobot/<username>/<dataset_name> \
+  --repo-type dataset
+```
+### 5.3 Tag a dataset version(Optional)
+```bash
+python -c "from huggingface_hub import HfApi; HfApi().create_tag('<HF_USERNAME>/<DATASET_NAME>', tag='v3.0', repo_type='dataset')"
+```
+> New verison of the Lerobot needs tag='v3.0'
+### 5.4 Use a mirror endpoint(Optional) 
+Some networks may require:
+```bash
+export HF_ENDPOINT=https://hf-mirror.com
+```
+
+## 6) Merge multiple datasets
+> If you want to merge different datasets into one dataset,you can follow this command
+```bash
+lerobot-edit-dataset \
+  --repo_id <HF_USERNAME>/<MERGED_DATASET_NAME> \
+  --operation.type merge \
+  --operation.repo_ids "['<repo1>', '<repo2>', '<repo3>']"
+```
+🔴 repo_ids should be <username>/<dataset_name>
+
+## 7) AutoDL training (SmolVLA / ACT / π0)
+### 7.1 Prepare environment
+```bash
+conda activate lerobot
+```
+### 7.2
+### 7.3 Video backend note (important)
+If you see video decode issues, install ```pyav``` and use ```--dataset.video_backend=pyav```.
+```bash
+pip install av
+```
+
+
