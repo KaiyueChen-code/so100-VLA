@@ -122,6 +122,8 @@ lerobot-dataset-viz --repo-id <HF_DATASET_REPO_ID> --episode-index 0
 ```
 
 ## Next steps
+Full SO100 workflow (teleop/record/upload/train/deploy):
+htt
 
 
 
