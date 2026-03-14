@@ -42,3 +42,44 @@ pip install -e ".[aloha]"
 pip install -e ".[feetech]"
 ```
 
+## 3) System tools (recommended)
+### Camera tools
+```bash
+sudo apt-get update
+sudo apt-get install -y v4l-utils
+```
+check cameras:
+>Use the command to check the information of the camera and comfirm it is avalivable.
+```bash
+v4l2-ctl --list-devices
+v4l2-ctl -d /dev/video0 --list-formats-ext
+v4l2-ctl -d /dev/video4 --list-formats-ext
+```
+### Video decoding backend (if needed)
+If you see video decode issues, install PyAV:
+```bash
+pip install av
+```
+
+## 4) USB serial permissions (SO100)
+Quick fix (temporary):
+```bash
+sudo chmod 666 /dev/ttyACM0
+sudo chmod 666 /dev/ttyACM1
+```
+
+## 5) HuggingFace login
+```bash
+huggingface-cli login
+```
+
+## 6) (AutoDL) Redirect HuggingFace cache (recommended)
+To avoid running out of space on the system disk, redirect HF cache to a larger disk:
+```bash
+mkdir -p /root/autodl-tmp/hf_cache
+rm -rf /root/.cache/huggingface
+ln -s /root/autodl-tmp/hf_cache /root/.cache/huggingface
+ls -ld /root/.cache/huggingface
+```
+
+
