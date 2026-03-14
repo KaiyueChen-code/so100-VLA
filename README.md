@@ -77,3 +77,53 @@ huggingface-cli login
 ```
 
 ### 4) Download models/datasets
+### 5) Teleop quick test (SO100 leader → follower)
+```bash
+lerobot-teleoperate \
+  --robot.type=so100_follower \
+  --robot.port=/dev/ttyACM0 \
+  --robot.id=<FOLLOWER_ID> \
+  --robot.cameras="{'handeye': {'type':'opencv', 'index_or_path':4, 'width':640, 'height':360, 'fps':30}, 'top': {'type':'opencv', 'index_or_path':0, 'width':640, 'height':360, 'fps':30}}" \
+  --teleop.type=so100_leader \
+  --teleop.port=/dev/ttyACM1 \
+  --teleop.id=<LEADER_ID> \
+  --display_data=true
+```
+If you see permission errors:
+```bash
+sudo usermod -aG dialout $USER
+newgrp dialout
+# or temporary:
+sudo chmod 666 /dev/ttyACM0 /dev/ttyACM1
+```
+
+
+### 6）Record a tiny dataset (1 episode)
+```bash
+lerobot-record \
+  --robot.type=so100_follower \
+  --robot.port=/dev/ttyACM0 \
+  --robot.id=<FOLLOWER_ID> \
+  --robot.cameras="{'handeye': {'type':'opencv', 'index_or_path':4, 'width':640, 'height':360, 'fps':30}, 'top': {'type':'opencv', 'index_or_path':0, 'width':640, 'height':360, 'fps':30}}" \
+  --teleop.type=so100_leader \
+  --teleop.port=/dev/ttyACM1 \
+  --teleop.id=<LEADER_ID> \
+  --display_data=false \
+  --dataset.repo_id=<HF_DATASET_REPO_ID> \
+  --dataset.num_episodes=1 \
+  --dataset.episode_time_s=10 \
+  --dataset.reset_time_s=3 \
+  --dataset.single_task="Grasp the blue cube" \
+  --dataset.push_to_hub=false
+```
+Visualize:
+```bash
+lerobot-dataset-viz --repo-id <HF_DATASET_REPO_ID> --episode-index 0
+```
+
+## Next steps
+
+
+
+
+
