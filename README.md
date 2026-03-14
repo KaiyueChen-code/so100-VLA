@@ -47,6 +47,8 @@ so100-lerobot-guide/
   - Wrist: DSJ-2062-309 — **1280×720 @ 30fps (MJPG)**
 
 ## Quick Start
+```md
+- Setup & environment: [docs/02_setup_env.md](docs/02_setup_env.md)
 If you just want to run inference / reproduce training quickly, follow this.
 
 ### 1) Setup environment
