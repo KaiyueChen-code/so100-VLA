@@ -87,6 +87,7 @@ Large artifacts (datasets / checkpoints) are hosted on HuggingFace:
   - SmolVLA: EricChen06/so100_smolvla
   - ACT: EricChen06/so100_act
   - π0: EricChen06/so100_pi0
+  
 🔗Link: https://huggingface.co/EricChen06
 
 ### 5) Teleop quick test (SO100 leader → follower)
