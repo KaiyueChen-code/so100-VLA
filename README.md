@@ -169,5 +169,11 @@ Setup & environment details:
 - [SO100 Fine-tuning Workflow](docs/02_so100_finetune_workflow.md)
 
 
+### Acknowledgement
+
+This project builds upon following open-source code-bases. Please visit the URLs to see the respective LICENSES (If you find these projects valuable, it would be greatly appreciated if you could give them a star rating.):
+
+1. https://github.com/huggingface/lerobot
+
 
 
