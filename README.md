@@ -39,11 +39,8 @@
 
 ## Demo
 <p align="center">
-  <img src="assets/grasp.gif" alt="Move the obstacle and Grasp the blue cube" width="700"/>
+  <img src="asserts/grasp.gif" alt="Move the obstacle and Grasp the blue cube" width="700"/>
 </p>
-
-
-<p align="center"><em>Robotic arm executing a multi-step manipulation task</em></p>
 
 ## Overview
 This project proposes a hierarchical Vision-Language-Action (VLA) framework for robotic arms, designed to tackle the core challenges of long-horizon manipulation tasks: error accumulation, tight coupling between planning and execution, high inference latency, and insufficient safety supervision.
