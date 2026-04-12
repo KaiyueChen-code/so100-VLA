@@ -41,6 +41,8 @@
 <p align="center">
   <img src="docs/assets/grasp.gif" alt="Move the obstacle and Grasp the blue cube" width="700"/>
 </p>
+
+
 <p align="center"><em>Robotic arm executing a multi-step manipulation task</em></p>
 
 ## Overview
