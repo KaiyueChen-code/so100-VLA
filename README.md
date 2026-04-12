@@ -3,7 +3,7 @@
 > A practical, reproducible guide for using the **LeRobot SO100** robotic arm in a **Three Way Decision** research project, including dataset collection, preprocessing, fine-tuning, training, evaluation, and deployment.  
 
 <p align="center">
-  <img alt="LeRobot, Hugging Face Robotics Library" src="Asserts/lerobot-logo-thumbnail.png" width="100%">
+  <img alt="LeRobot, Hugging Face Robotics Library" src="asserts/lerobot-logo-thumbnail.png" width="100%">
 </p>
 
 <div align="center">
