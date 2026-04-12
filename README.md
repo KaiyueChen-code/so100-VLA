@@ -43,7 +43,7 @@
 | <img src="asserts/grasp.gif" width="350"/> | <img src="asserts/grasp2.gif" width="350"/> |
 | Move the obstacle and Pick | Decision Pick Left |
 
-## Overview
+## 📖Overview
 This project proposes a hierarchical Vision-Language-Action (VLA) framework for robotic arms, designed to tackle the core challenges of long-horizon manipulation tasks: error accumulation, tight coupling between planning and execution, high inference latency, and insufficient safety supervision.
 Inspired by the structure of the human nervous system, the architecture is organized into three decoupled modules:
 
@@ -54,18 +54,18 @@ Inspired by the structure of the human nervous system, the architecture is organ
 More overview details：
 - [overview](docs/00_overview.md)
 
-### Key Goals
+### 📍Key Goals
 - Improve task success rate on multi-step, long-horizon manipulation tasks
 - Reduce end-to-end inference latency through local deployment of LLM + VLA models
 - Enable robust, recoverable safety supervision in open environments
 - Explore diverse data collection methods (teleoperation, VR control, UMI) to improve model generalization
 
-### Current Status
+### 🟢Current Status
 A working demo system has been built and validated on the SO100 robotic arm platform, with ACT, SmolVLA, and Pi0 already fine-tuned and tested. The project is actively progressing toward full three-module integration, hardware upgrade, and localized inference deployment.
 
 
 
-### Hardware / Stack
+### 💻Hardware / Stack
 - Robot: **LeRobot SO100**
 - Sensors: <Top camera / Wrist camera>
 - Runtime: PC workstation (x86_64) + NVIDIA GeForce RTX 4060 (16GB)
@@ -74,7 +74,7 @@ A working demo system has been built and validated on the SO100 robotic arm plat
 
 ---
 
-## Repository Structure
+## 📋Repository Structure
 ```text
 so100-lerobot-guide/
   README.md
@@ -84,7 +84,7 @@ so100-lerobot-guide/
   LICENSE
 ```
 
-## Requirements
+## 📜Requirements
 - OS: Ubuntu 22.04.5 LTS (Jammy)
 - Kernel: 6.8.0-94-generic
 - CPU Arch: x86_64
@@ -183,7 +183,7 @@ Visualize:
 lerobot-dataset-viz --repo-id <HF_DATASET_REPO_ID> --episode-index 0
 ```
 
-### Next steps
+### 👉Next steps
 Full SO100 workflow (teleop/record/upload/train/deploy):
 - [Setup & Environment](docs/01_setup_env.md)
 
@@ -191,7 +191,7 @@ Setup & environment details:
 - [SO100 Fine-tuning Workflow](docs/02_so100_finetune_workflow.md)
 
 
-### Acknowledgement
+## 🙏Acknowledgement
 
 This project builds upon following open-source code-bases. Please visit the URLs to see the respective LICENSES (If you find these projects valuable, it would be greatly appreciated if you could give them a star rating.):
 
