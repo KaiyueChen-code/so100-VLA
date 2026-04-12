@@ -38,6 +38,7 @@
 ---
 
 ## Demo
+![Move the obstacle and Grasp the blue cube](图片链接)
 <p align="center">
   <img src="docs/assets/grasp.gif" alt="Move the obstacle and Grasp the blue cube" width="700"/>
 </p>
