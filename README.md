@@ -46,7 +46,7 @@ Inspired by the structure of the human nervous system, the architecture is organ
 - 👁️ Supervisor — Real-time safety monitoring and recovery. A YOLO-based detection module watches for hazards (e.g., human hands entering the workspace) and triggers a pause → observe → confirm → resume loop rather than an abrupt stop, enabling safe and continuous operation in human-robot collaboration settings.
 
 More overview details：
-- [Setup & Environment](docs/00_overview.md)
+- [overview](docs/00_overview.md)
 
 ### Key Goals
 - Improve task success rate on multi-step, long-horizon manipulation tasks
