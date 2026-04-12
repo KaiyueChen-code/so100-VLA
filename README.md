@@ -37,9 +37,24 @@
 
 ---
 
-## Project Overview
-### Research Topic
-**Three Way Decision** for SO100 robotic arm control / decision-making.
+## Overview
+This project proposes a hierarchical Vision-Language-Action (VLA) framework for robotic arms, designed to tackle the core challenges of long-horizon manipulation tasks: error accumulation, tight coupling between planning and execution, high inference latency, and insufficient safety supervision.
+Inspired by the structure of the human nervous system, the architecture is organized into three decoupled modules:
+
+- 🧠 Brain — High-level semantic understanding and task planning. A fine-tuned Qwen large language model (via LoRA) receives natural language instructions and real-time visual feedback, decomposing complex goals into ordered sub-task sequences.
+- 🦾 Cerebellum — Low-level action execution. Dedicated VLA/action models (ACT, SmolVLA, Pi0) translate sub-task commands into precise robotic arm motions, handling grasping, transport, and placement.
+- 👁️ Supervisor — Real-time safety monitoring and recovery. A YOLO-based detection module watches for hazards (e.g., human hands entering the workspace) and triggers a pause → observe → confirm → resume loop rather than an abrupt stop, enabling safe and continuous operation in human-robot collaboration settings.
+
+### Key Goals
+- Improve task success rate on multi-step, long-horizon manipulation tasks
+- Reduce end-to-end inference latency through local deployment of LLM + VLA models
+- Enable robust, recoverable safety supervision in open environments
+- Explore diverse data collection methods (teleoperation, VR control, UMI) to improve model generalization
+
+### Current Status
+A working demo system has been built and validated on the SO100 robotic arm platform, with ACT, SmolVLA, and Pi0 already fine-tuned and tested. The project is actively progressing toward full three-module integration, hardware upgrade, and localized inference deployment.
+
+
 
 ### Hardware / Stack
 - Robot: **LeRobot SO100**
