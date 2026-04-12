@@ -39,7 +39,7 @@
 
 ## Demo
 <p align="center">
-  <img src="asserts/grasp.gif" alt="Move the obstacle and Grasp the blue cube" width="700"/>
+  <img src="asserts/grasp.gif" alt="Move the obstacle and Grasp the blue cube" width="400"/>
 </p>
 
 ## Overview
