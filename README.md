@@ -38,7 +38,7 @@
 ---
 
 ## Demo
-![Move the obstacle and Grasp the blue cube](图片链接)
+![Move the obstacle and Grasp the blue cube] (https://github.com/KaiyueChen-code/so100-lerobot/blob/main/asserts/grasp.gif)
 <p align="center">
   <img src="docs/assets/grasp.gif" alt="Move the obstacle and Grasp the blue cube" width="700"/>
 </p>
