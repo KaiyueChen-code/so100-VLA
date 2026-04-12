@@ -42,6 +42,11 @@
   <img src="asserts/grasp.gif" alt="Move the obstacle and Grasp the blue cube" width="400"/>
 </p>
 
+| Task 1 | Task 2 |
+|:-----------------:|:-----------------:|
+| <img src="asserts/grasp.gif" width="350"/> | <img src="asserts/grasp2.gif" width="350"/> |
+| Move the obstacle and Pick | Decision Pick Left |
+
 ## Overview
 This project proposes a hierarchical Vision-Language-Action (VLA) framework for robotic arms, designed to tackle the core challenges of long-horizon manipulation tasks: error accumulation, tight coupling between planning and execution, high inference latency, and insufficient safety supervision.
 Inspired by the structure of the human nervous system, the architecture is organized into three decoupled modules:
